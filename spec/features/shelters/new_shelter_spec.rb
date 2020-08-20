@@ -20,27 +20,29 @@ require 'rails_helper'
 RSpec.describe "shelters index page", type: :feature do
   it "see a link to create a new Shelter" do
 
-    visit "/shelters"
+    visit '/shelters'
 
     expect(page).to have_link("New Shelter")
   end
 
   it "taken to form for new shelter" do
 
-    visit "/shelters"
+    visit '/shelters'
 
     click_link "New Shelter"
 
     expect(current_path).to eq('/shelters/new')
 
-    fill_in "Name", :with => 'Table Mountain'
-    fill_in "Address", :with => '1212 Freedom Ln'
-    fill_in "City", :with => 'Golden'
-    fill_in "State", :with => 'CO'
-    fill_in "Zip", :with => '80007'
+    # save_and_open_page
+    fill_in "name", with: 'Table Mountain'
+    fill_in "address", with: '444 Magic Ln'
+    fill_in "city", with: 'Arvada'
+    fill_in "state", with: 'CO'
+    fill_in "zip", with: '80007'
+
     click_on "Create Shelter"
 
-    expect(current_path).to eq("/shelters")
-    expect(page).to have_content("Table Mountain")
+    expect(current_path).to eq('/shelters')
+    expect(page).to have_content('Table Mountain')
   end
 end
