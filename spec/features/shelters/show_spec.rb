@@ -7,6 +7,7 @@
 # city
 # state
 # zip
+#completed ^
 
 require 'rails_helper'
 
@@ -24,5 +25,15 @@ RSpec.describe "shelters show page", type: :feature do
     expect(page).to have_content("#{shelter1.zip}")
 
     expect(page).to_not have_content("#{shelter2.name}")
+  end
+
+  it "see a link to update the shelter" do
+    shelter1 = Shelter.create(name: "Mooses Palace", address: "123 main st", city: "Denver", state: "CO", zip: "80005")
+    shelter2 = Shelter.create(name: "Moon Souls", address: "555 Lunar way", city: "Arvada", state: "CO", zip: "80012")
+
+    visit "/shelters/#{shelter1.id}"
+
+    expect(page).to have_link("Update Shelter")
+    expect(current_path).to eq("/shelters/#{shelter1.id}")
   end
 end
