@@ -1,7 +1,16 @@
 <h1>Shelters</h1>
 
-<% @shelters.each do |shelter|%>
-<%= shelter.name  %> <br>
-<% end %>
-<br>
-<%= link_to("New Shelter", "/shelters/new") %>
+  <% @shelters.each do |shelter|%>
+  <section class="shelters">
+    <p style="text-align:center;"><%= shelter.name  %> <br>
+    <%= shelter.address %>
+    <%= shelter.city %>
+    <%= shelter.state %>
+    <%= shelter.zip %>
+    <br>
+    <br>
+    <section class="new_link">
+      <a href= "/shelter/new" id="new-shelter"> New Shelter</a>
+      </section>
+    </section>
+    <% end %>
