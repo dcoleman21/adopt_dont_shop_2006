@@ -16,4 +16,15 @@
 
 h1 {
   color: cornflowerblue;
+  float: center
+}
+section.shelters{
+  border: 1px solid black;
+  width: 200px;
+  height: 400px;
+  float: left;
+  margin-left: 10px;
+}
+section.new_link {
+  margin-top: 140%;
 }
