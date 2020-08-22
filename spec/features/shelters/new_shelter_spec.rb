@@ -22,6 +22,7 @@ RSpec.describe "shelters index page", type: :feature do
 
     visit '/shelters'
 
+    # save_and_open_page
     expect(page).to have_link("New Shelter")
   end
 
@@ -33,7 +34,6 @@ RSpec.describe "shelters index page", type: :feature do
 
     expect(current_path).to eq('/shelters/new')
 
-    # save_and_open_page
     fill_in "name", with: 'Table Mountain'
     fill_in "address", with: '444 Magic Ln'
     fill_in "city", with: 'Arvada'
