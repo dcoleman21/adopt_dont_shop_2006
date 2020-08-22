@@ -22,7 +22,6 @@ RSpec.describe "shelters index page", type: :feature do
 
     visit '/shelters'
 
-    # save_and_open_page
     expect(page).to have_link("New Shelter")
   end
 
