@@ -1,0 +1,10 @@
+<h1>Pets</h1>
+
+<% @pets.each do |pet|%>
+  <%= pet.name %>
+  <%= pet.approximate_age %>
+  <%= pet.sex %>
+  <%= pet.shelter.name %>
+  <br>
+  <br>
+<% end %>
