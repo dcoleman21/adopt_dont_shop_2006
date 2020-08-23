@@ -4,12 +4,12 @@ RSpec.describe "pets show page", type: :feature do
   it "see the pet with that id including the pet's information" do
     shelter1 = Shelter.create(name: "Mooses Palace", address: "123 main st", city: "Denver", state: "CO", zip: "80005")
 
-    pet1 = shelter1.pets.create!(name: "Ari", approximate_age: 2, sex: "Male", image: "ari.jpeg")
-    pet2 = shelter1.pets.create!(name: "Axel", approximate_age: 2, sex: "Male", image: "axel.jpeg")
+    pet1 = shelter1.pets.create!(name: "Ari", approximate_age: 2, sex: "Male", image: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3D_-ssNsbP7wA&psig=AOvVaw2auKW-5L8Xb6xZQNcxROVe&ust=1598312346629000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCMiNjs-_susCFQAAAAAdAAAAABAF")
+    pet2 = shelter1.pets.create!(name: "Axel", approximate_age: 2, sex: "Male", image: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fpets.webmd.com%2Fdogs%2Ffeatures%2Fdog-cool-summer&psig=AOvVaw0v-H0ylJHtEr8BDCFN9W8u&ust=1598312421626000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCLCi8fK_susCFQAAAAAdAAAAABAE")
 
     visit "/pets/#{pet1.id}"
 
-    expect(page).to have_xpath("//img['ari.jpeg']")
+    expect(page).to have_css("img[src*=BAF]")
     expect(page).to have_content("#{pet1.name}")
     expect(page).to have_content("#{pet1.description}")
     expect(page).to have_content("#{pet1.approximate_age}")

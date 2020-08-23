@@ -13,14 +13,14 @@ RSpec.describe "shelters pets index page", type: :feature do
   it "taken to form to add a new adoptable pet" do
     shelter1 = Shelter.create!(name: "Mooses Palace", address: "123 Main St",
       city: "Denver", state: "CO", zip: "80005")
-      
+
     visit "/shelters/#{shelter1.id}/pets"
 
     click_link "Create Pet"
 
     expect(current_path).to eq("/shelters/#{shelter1.id}/pets/new")
 
-    fill_in "//img['ms_kiss.jpeg']", with: 'image.jpeg'
+    fill_in 'image', with: 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3D_-ssNsbP7wA&psig=AOvVaw2auKW-5L8Xb6xZQNcxROVe&ust=1598312346629000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCMiNjs-_susCFQAAAAAdAAAAABAF'
     fill_in 'name', with: 'Ms. Kiss'
     fill_in 'description', with: 'Sweet, furry and loves to cuddle!'
     fill_in 'approximate_age', with: 2
