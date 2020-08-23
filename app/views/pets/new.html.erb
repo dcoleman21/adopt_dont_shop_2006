@@ -1,0 +1,17 @@
+<form action="/pets" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <p>New Adoptable Pet:</p>
+  <label for="name">Pet Name:</label><br>
+  <input type='text' name='pet[name]' id='name'><br/>
+  <label for="description">Description:</label><br>
+  <input type='text' name='pet[description]' id='description'><br/>
+  <label for="approximate_age">Approximate_Age:</label><br>
+  <input type="text" name='pet[approximate_age]' id='approximate_age'><br/>
+  <label for="gender">Gender:</label><br>
+  <input type="text" name='pet[gender]' id='gender'><br/>
+  <label for="adoption_status">Adoption_Status:</label><br>
+  <input type="text" name='pet[adoption_status]' id='adoption_status'><br/>
+  <br>
+  <input type='submit' value="Create Pet"><br>
+  <br>
+</form>
