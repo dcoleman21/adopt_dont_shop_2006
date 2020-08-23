@@ -10,5 +10,5 @@
 shelter1 = Shelter.create(name: "Mooses Palace", address: "123 Main St", city: "Denver", state: "CO", zip: "80005")
 shelter2 = Shelter.create(name: "Moon Souls", address: "555 Lunar way", city: "Arvada", state: "CO", zip: "80012")
 
-pet1 = shelter1.pets.create!(name: "Ari", approximate_age: 2, sex: "Male", image: "ari.jpeg")
-pet2 = shelter2.pets.create!(name: "Axel", approximate_age: 2, sex: "Male", image: "axel.jpeg")
+pet1 = Pet.create(name: "Ari", approximate_age: 2, sex: "Male", image: "ari.jpeg", shelter_id: shelter1.id)
+pet2 = Pet.create(name: "Axel", approximate_age: 2, sex: "Male", image: "axel.jpeg", shelter_id: shelter2.id)

@@ -3,6 +3,6 @@
 <p><%= @shelter.city %></p>
 <p><%= @shelter.state %></p>
 <p><%= @shelter.zip %></p>
-<p><%= @shelter.pets %></p>
+<p><%= @shelter.pets.first.name %></p>
 <%= link_to("Update Shelter", "/shelters/#{@shelter.id}/edit") %>
 <%= link_to("Delete Shelter", "/shelters/#{@shelter.id}", method: :delete) %>
