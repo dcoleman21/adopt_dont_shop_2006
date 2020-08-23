@@ -2,9 +2,13 @@
 
 <% @pets.each do |pet|%>
   <%= pet.name %>
+  <br>
   <%= pet.approximate_age %>
+  <br>
   <%= pet.sex %>
+  <br>
   <%= pet.shelter.name %>
   <br>
+  <%= image_tag(pet.image, :size => "200x100") %>
   <br>
 <% end %>
