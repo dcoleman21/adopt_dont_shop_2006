@@ -12,7 +12,7 @@ require 'rails_helper'
 
 RSpec.describe 'Pets index page' do
   it 'can see each Pet in the system' do
-    shelter1 = Shelter.create!(name: "Mooses Palace", address: "123 main st",
+    shelter1 = Shelter.create!(name: "Mooses Palace", address: "123 Main St",
       city: "Denver", state: "CO", zip: "80005")
     shelter2 = Shelter.create!(name: "Moon Souls", address: "555 Lunar way",
       city: "Arvada", state: "CO", zip: "80012")
@@ -28,12 +28,12 @@ RSpec.describe 'Pets index page' do
     expect(page).to have_content(pet1.approximate_age)
     expect(page).to have_content(pet1.sex)
     expect(page).to have_content(shelter1.name)
-    # expect(page).to have_xpath("//a[contains(., 'ari.jpeg')]")
+    expect(page).to have_xpath("//img['ari.jpeg']")
 
     expect(page).to have_content(pet2.name)
     expect(page).to have_content(pet2.approximate_age)
     expect(page).to have_content(pet2.sex)
     expect(page).to have_content(shelter2.name)
-    # expect(page).to have_xpath("//['axel.jpeg']")
+    expect(page).to have_xpath("//img['axel.jpeg']")
   end
 end
