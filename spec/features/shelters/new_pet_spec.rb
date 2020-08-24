@@ -20,7 +20,7 @@ RSpec.describe "shelters pets index page", type: :feature do
 
     expect(current_path).to eq("/shelters/#{shelter1.id}/pets/new")
 
-    fill_in 'image', with: 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3D_-ssNsbP7wA&psig=AOvVaw2auKW-5L8Xb6xZQNcxROVe&ust=1598312346629000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCMiNjs-_susCFQAAAAAdAAAAABAF'
+    fill_in 'image', with: 'https://i.pinimg.com/736x/92/f4/5c/92f45cc2ae3a4c1aa6835bb2733ad3ea.jpg'
     fill_in 'name', with: 'Ms. Kiss'
     fill_in 'description', with: 'Sweet, furry and loves to cuddle!'
     fill_in 'approximate_age', with: 2
